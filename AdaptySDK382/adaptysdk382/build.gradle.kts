@@ -13,7 +13,7 @@ kotlin {
     }
 }
 dependencies {
-    implementation(platform("io.adapty:adapty-bom:3.8.4"))
+    implementation(platform("io.adapty:adapty-bom:3.8.2"))
     implementation("io.adapty:android-sdk")
     implementation("io.adapty:android-ui")
     implementation(libs.kotlin.stdlib.jdk7)
