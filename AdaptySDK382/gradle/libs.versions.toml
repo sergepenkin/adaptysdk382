@@ -10,6 +10,9 @@ material = "1.12.0"
 jetbrainsKotlinJvm = "2.0.21"
 adaptyBom = "3.8.2"
 kotlinStdlibJdk7 = "2.2.0"
+crossplatform = "3.8.2"
+androidSdk = "3.8.0"
+androidUi = "3.8.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -20,6 +23,9 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 adapty-bom = { group = "io.adapty", name = "adapty-bom", version.ref = "adaptyBom" }
 kotlin-stdlib-jdk7 = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk7", version.ref = "kotlinStdlibJdk7" }
+crossplatform = { group = "io.adapty.internal", name = "crossplatform", version.ref = "crossplatform" }
+android-sdk = { group = "io.adapty", name = "android-sdk", version = "3.8.2" }
+android-ui = { group = "io.adapty", name = "android-ui", version.ref = "androidUi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
