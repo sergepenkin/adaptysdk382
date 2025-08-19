@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -8,6 +9,7 @@ pluginManagement {
             }
         }
         mavenCentral()
+        //maven { url=uri("https://adapty.io") }
         gradlePluginPortal()
     }
 }
@@ -16,8 +18,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        //
+            //maven { url=uri("https://repo.adapty.io/public/") }
     }
 }
 
 rootProject.name = "TestApp"
 include(":app")
+include(":adaptysdk382")

@@ -5,11 +5,23 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        getByName("debug") {
+            storeFile =
+                file("D:\\Projects\\Misradit\\CompanyBooksProMobile\\CompanyBooksProMobile.Android\\Keystore\\misradit.keystore")
+            storePassword = "1Q2w3e4r"
+            keyPassword = "1Q2w3e4r"
+            keyAlias = "misradit"
+        }
+    }
     namespace = "com.adapty.testapp"
+    //com.iptv.m3u.player
+    //namespace = "com.iptv.m3u.player"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.adapty.testapp"
+        //applicationId = "com.adapty.testapp"
+        applicationId = "com.iptv.m3u.player"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -49,11 +61,19 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.adapty.bom)
-    implementation(libs.android.sdk)
-    implementation(libs.android.ui)
-    implementation(libs.crossplatform)
+    implementation(project(":adaptysdk382"))
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    /*
+        implementation(platform(libs.adapty.bom))
+        implementation(libs.android.sdk)
+        implementation(libs.android.ui)
+        implementation(libs.crossplatform)
+    */
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

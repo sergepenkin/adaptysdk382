@@ -8,10 +8,22 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2024.09.00"
-adaptyBom = "3.8.2"
+adaptyBom = "3.10.0"
+crossplatform = "3.8.4"
+jetbrainsKotlinJvm = "2.0.21"
+gson = "2.13.1"
+ui = "1.9.0"
+billingKtx = "7.0.0"
+installreferrer = "1.0"
+roomCompilerProcessingTesting = "2.7.2"
+appcompat = "1.7.1"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+adaptyBomVersion = "3.10.0"
 androidSdk = "3.8.0"
 androidUi = "3.8.2"
-crossplatform = "3.8.2"
+crossplatformVersion = "3.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,13 +40,28 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
 adapty-bom = { group = "io.adapty", name = "adapty-bom", version.ref = "adaptyBom" }
-android-sdk = { group = "io.adapty", name = "android-sdk", version = "3.8.2" }
-android-ui = { group = "io.adapty", name = "android-ui", version.ref = "androidUi" }
+android-ui = { group = "io.adapty", name = "android-ui" }
+android-sdk = { group = "io.adapty", name = "android-sdk" }
 crossplatform = { group = "io.adapty.internal", name = "crossplatform", version.ref = "crossplatform" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
+billing-ktx = { group = "com.android.billingclient", name = "billing-ktx", version.ref = "billingKtx" }
+installreferrer = { group = "com.android.installreferrer", name = "installreferrer", version.ref = "installreferrer" }
+androidx-room-compiler-processing-testing = { group = "androidx.room", name = "room-compiler-processing-testing", version.ref = "roomCompilerProcessingTesting" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+adapty-adapty-bom = { group = "io.adapty", name = "adapty-bom", version.ref = "adaptyBomVersion" }
+adapty-android-sdk = { group = "io.adapty", name = "android-sdk" }
+adapty-android-ui = { group = "io.adapty", name = "android-ui" }
+internal-crossplatform = { group = "io.adapty.internal", name = "crossplatform", version.ref = "crossplatformVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 
