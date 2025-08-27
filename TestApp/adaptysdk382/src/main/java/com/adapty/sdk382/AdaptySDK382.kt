@@ -289,7 +289,6 @@ class AdaptySDK382 {
                             when (result) {
                                 is AdaptyResult.Success -> {
                                     val viewConfiguration = result.value
-                                    // use loaded configuration
 
                                     val paywallView = AdaptyUI.getPaywallView(
                                         activity1,
@@ -388,11 +387,13 @@ class AdaptySDK382 {
                                     )
 
                                     Adapty.logShowPaywall(paywall)
+                                    activity1.runOnUiThread {
 
                                     val parentLayout = activity1.findViewById<LinearLayout>(res)
                                     parentLayout.addView(paywallView)
-                                    //parentLayout.invalidate();
 
+                                    //parentLayout.invalidate();
+/*
                                     paywallView.showPaywall(
                                         viewConfiguration,
                                         products = null,
@@ -490,6 +491,9 @@ class AdaptySDK382 {
                                         timerResolver = TODO(),
                                         observerModeHandler = TODO() */
                                     )
+                                    */
+                                    }
+
                                     //}
 
 
@@ -512,4 +516,245 @@ class AdaptySDK382 {
         }
     }
 
+
+    public final fun ShowPaywall2(PaywallId: String, activity1: Activity, res : Int)  {
+
+        //Adapty.getPaywall(PaywallId, locale = "en", loadTimeout = 10.seconds) { result ->
+        Adapty.getPaywall(PaywallId, loadTimeout = 10.seconds) { result ->
+            when (result) {
+                is AdaptyResult.Success -> {
+                    val paywall = result.value
+                    // the requested paywall
+
+                    if (paywall.hasViewConfiguration) {
+                        AdaptyUI.getViewConfiguration(paywall, loadTimeout = 10.seconds) { result ->
+                            when (result) {
+                                is AdaptyResult.Success -> {
+                                    val viewConfiguration = result.value
+                                    activity1.runOnUiThread {
+                                    val paywallView = AdaptyUI.getPaywallView(
+                                        activity1,
+                                        viewConfiguration = viewConfiguration,
+                                        products = null, // Optional: pre-fetched products
+                                        eventListener = object : AdaptyUiEventListener {
+                                            fun onEvent(event: AdaptyUiEvent) {
+
+                                            }
+
+                                            override fun onActionPerformed(
+                                                action: AdaptyUI.Action,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onAwaitingPurchaseParams(
+                                                product: AdaptyPaywallProduct,
+                                                context: Context,
+                                                onPurchaseParamsReceived: AdaptyUiEventListener.PurchaseParamsCallback
+                                            ): AdaptyUiEventListener.PurchaseParamsCallback.IveBeenInvoked {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onLoadingProductsFailure(
+                                                error: AdaptyError,
+                                                context: Context
+                                            ): Boolean {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onPaywallClosed() {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onPaywallShown(context: Context) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onProductSelected(
+                                                product: AdaptyPaywallProduct,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onPurchaseFailure(
+                                                error: AdaptyError,
+                                                product: AdaptyPaywallProduct,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onPurchaseFinished(
+                                                purchaseResult: AdaptyPurchaseResult,
+                                                product: AdaptyPaywallProduct,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onPurchaseStarted(
+                                                product: AdaptyPaywallProduct,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onRenderingError(
+                                                error: AdaptyError,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onRestoreFailure(
+                                                error: AdaptyError,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onRestoreStarted(context: Context) {
+                                                TODO("Not yet implemented")
+                                            }
+
+                                            override fun onRestoreSuccess(
+                                                profile: AdaptyProfile,
+                                                context: Context
+                                            ) {
+                                                TODO("Not yet implemented")
+                                            }
+                                        }
+                                    )
+
+                                    Adapty.logShowPaywall(paywall)
+
+
+                                        val parentLayout = activity1.findViewById<LinearLayout>(res)
+                                        parentLayout.addView(paywallView)
+
+                                        //parentLayout.invalidate();
+                                        /*
+                                                                            paywallView.showPaywall(
+                                                                                viewConfiguration,
+                                                                                products = null,
+                                                                                eventListener = object : AdaptyUiEventListener {
+                                                                                    override fun onActionPerformed(
+                                                                                        action: AdaptyUI.Action,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        //TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onAwaitingPurchaseParams(
+                                                                                        product: AdaptyPaywallProduct,
+                                                                                        context: Context,
+                                                                                        onPurchaseParamsReceived: AdaptyUiEventListener.PurchaseParamsCallback
+                                                                                    ): AdaptyUiEventListener.PurchaseParamsCallback.IveBeenInvoked {
+                                                                                        return AdaptyUiEventListener.PurchaseParamsCallback.IveBeenInvoked
+                                                                                    }
+
+                                                                                    override fun onLoadingProductsFailure(
+                                                                                        error: AdaptyError,
+                                                                                        context: Context
+                                                                                    ): Boolean {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onPaywallClosed() {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onPaywallShown(context: Context) {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onProductSelected(
+                                                                                        product: AdaptyPaywallProduct,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onPurchaseFailure(
+                                                                                        error: AdaptyError,
+                                                                                        product: AdaptyPaywallProduct,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onPurchaseFinished(
+                                                                                        purchaseResult: AdaptyPurchaseResult,
+                                                                                        product: AdaptyPaywallProduct,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        //TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onPurchaseStarted(
+                                                                                        product: AdaptyPaywallProduct,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        //TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onRenderingError(
+                                                                                        error: AdaptyError,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        //TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onRestoreFailure(
+                                                                                        error: AdaptyError,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onRestoreStarted(context: Context) {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+
+                                                                                    override fun onRestoreSuccess(
+                                                                                        profile: AdaptyProfile,
+                                                                                        context: Context
+                                                                                    ) {
+                                                                                        TODO("Not yet implemented")
+                                                                                    }
+                                                                                }
+                                                                                /*,
+                                                                                insets = TODO(),
+                                                                                personalizedOfferResolver = TODO(),
+                                                                                customAssets = TODO(),
+                                                                                tagResolver = TODO(),
+                                                                                timerResolver = TODO(),
+                                                                                observerModeHandler = TODO() */
+                                                                            )
+                                                                            */
+                                    }
+
+                                    //}
+
+
+                                }
+
+                                is AdaptyResult.Error -> {
+                                    val error = result.error
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                is AdaptyResult.Error -> {
+                    val error = result.error
+                    // handle the error
+                }
+            }
+        }
+    }
 }

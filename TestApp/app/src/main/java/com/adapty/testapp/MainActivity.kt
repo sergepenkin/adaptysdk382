@@ -64,12 +64,15 @@ class MainActivity : ComponentActivity() {
         myButton.setOnClickListener {
             // Code to execute when the button is clicked
             //Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show()
-
             //adapty_.DisplayPaywall("paywall_android", currentActivity)
 
             val intent = Intent(this, PaywallActivity::class.java)
             //intent.putExtra("key", value)
             startActivity(intent)
+
+
+
+
         }
 
 

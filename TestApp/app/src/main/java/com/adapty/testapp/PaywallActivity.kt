@@ -19,7 +19,7 @@ class PaywallActivity : AppCompatActivity() {
         //val parentLayout = activity1.findViewById<LinearLayout>(com.yourpackage.adaptysdk382.R.id.parent_layout)
         //parentLayout.addView(paywallView)
 
-        adapty_.ShowPaywall("paywall_android", this, R.id.pw_layout)
+        adapty_.ShowPaywall2("paywall_android", this, R.id.pw_layout)
 
         //val parentLayout = findViewById<LinearLayout>(R.id.parent_layout)
         //parentLayout.addView(paywallView)
