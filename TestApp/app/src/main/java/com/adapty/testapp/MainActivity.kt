@@ -21,7 +21,7 @@ import com.adapty.sdk382.AdaptySDK382
 import com.adapty.testapp.ui.theme.TestAppTheme
 import kotlinx.coroutines.delay
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(), com.adapty.internal.crossplatform.ActivityProvider {
     var adapty_ = AdaptySDK382()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,15 +64,10 @@ class MainActivity : ComponentActivity() {
         myButton.setOnClickListener {
             // Code to execute when the button is clicked
             //Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show()
-            //adapty_.DisplayPaywall("paywall_android", currentActivity)
+            //val intent = Intent(this, PaywallActivity::class.java)
+            //startActivity(intent)
 
-            val intent = Intent(this, PaywallActivity::class.java)
-            //intent.putExtra("key", value)
-            startActivity(intent)
-
-
-
-
+            adapty_.DisplayPaywallOverHelper("paywall_android", currentActivity)
         }
 
 
@@ -80,7 +75,7 @@ class MainActivity : ComponentActivity() {
             // Code to execute when the button is clicked
             //Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show()
 
-            adapty_.InitAdapty(applicationContext, "public_live_uXkrMIHl.6YWa7VOzEhya9jOE8VkU")
+            adapty_.InitAdapty(applicationContext, currentActivity, "public_live_uXkrMIHl.6YWa7VOzEhya9jOE8VkU")
         }
 
         /*
@@ -111,6 +106,10 @@ class MainActivity : ComponentActivity() {
             }
         }
          */
+    }
+
+    override fun invoke(): Activity? {
+        return this;
     }
 }
 

@@ -80,4 +80,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(platform(libs.adapty.adapty.bom))
+    implementation(libs.adapty.android.sdk)
+    implementation(libs.adapty.android.ui)
+    implementation(libs.internal.crossplatform)
 }

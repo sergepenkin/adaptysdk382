@@ -16,7 +16,7 @@
             android:name=".PaywallActivity"
             android:label="Paywall"
             android:exported="true"
-            android:theme="@style/Theme.TestApp2" />
+            android:theme="@style/Theme.TestApp2"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

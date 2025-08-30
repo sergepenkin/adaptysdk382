@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Theme.TestApp" parent="Theme.MaterialComponents.Light.NoActionBar" />
+
+    <style name="Theme.TestApp2" parent="Theme.MaterialComponents.Light.NoActionBar" >
+    <!--<style name="Theme.TestApp2" parent="Theme.AppCompat" >-->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryDark">@color/purple_200</item>
+        <item name="colorAccent">@color/purple_200</item>
+        <!--
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        -->
+    </style>
+    <!--
     <style name="Theme.TestApp" parent="android:Theme.Material.Light.NoActionBar" />
-    <style name="Theme.TestApp2" parent="Theme.AppCompat" />
+    <style name="Theme.TestApp2" parent="Theme.AppCompat.Light.NoActionBar" >-->
 
 </resources>
